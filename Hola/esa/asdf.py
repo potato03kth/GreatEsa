@@ -16,6 +16,9 @@ from scipy.constants import h, c, Wien, k
 
 
 
+# TODO 해야한다 파이썬 동기화! 새로운 환경! 새로운 파이썬! 더 놀라운 윈도우 파이썬 앱! 와! WSL! 
+
+
 
 
 
@@ -40,39 +43,13 @@ con_ThatPoint = ((con_Wien*(np.power(10, 9)))/(myT)-400)
 
 
 
-# def Radiation(lam, myT, con_Thickness, Rho):
-
-
-
-
-    
-
-#     one = (( (2*(con_Planck)*(np.power(con_Light, 2)))*(np.power(10, 36)))/(np.power(lam, 5)))
-
-#     two = ((1)/((np.exp((con_Planck*con_Light*(np.power(10, 9)))/(lam*con_Boltzmann*myT))-1)))
-
-#     three_exp = ((-1/2)*np.power(((      (lam-((con_Wien*(np.power(10, 9)))/(myT)))/(((con_ThatPoint)/(1.96))))        ), 2) )
-
-#     three = (1) - ((((con_Thickness*Rho))/( (((con_ThatPoint)/(1.96))*np.sqrt(2*np.pi)) )) * (np.exp(three_exp)))
-
-#     return ((one)*(two)*(three))
-
-
-
-
 def Radiation(lam, myT, con_Thickness, Rho):
 
 
-
-
     lam_m = lam / 1.e9
-
     fac = h*c/lam_m/k/T
-
     B = 2*h*c**2/lam_m**5 / (np.exp(fac) - 1)
 
-
-    
 
     one = (( (2*(con_Planck)*(np.power(con_Light, 2)))*(np.power(10, 45))))
 
@@ -91,6 +68,22 @@ def Radiation(lam, myT, con_Thickness, Rho):
 
 
 
+# def Radiation(lam, myT, con_Thickness, Rho):
+
+
+
+
+    
+
+    # one = (( (2*(con_Planck)*(np.power(con_Light, 2)))*(np.power(10, 36)))/(np.power(lam, 5)))
+
+    # two = ((1)/((np.exp((con_Planck*con_Light*(np.power(10, 9)))/(lam*con_Boltzmann*myT))-1)))
+
+    # three_exp = ((-1/2)*np.power(((      (lam-((con_Wien*(np.power(10, 9)))/(myT)))/(((con_ThatPoint)/(1.96))))        ), 2) )
+
+    # three = (1) - ((((con_Thickness*Rho))/( (((con_ThatPoint)/(1.96))*np.sqrt(2*np.pi)) )) * (np.exp(three_exp)))
+
+    # return ((one)*(two)*(three))
 
 
 
