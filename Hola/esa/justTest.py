@@ -111,17 +111,21 @@ for i in range(24):
     html_rgb = cs.spec_to_rgb(spec, out_fmt='html')
     print(Luminance(lam, 499.65, 50.844, T))
 
-    # Place and label a circle with the colour of a black body at temperature T
+    # TODO the part that extual Luminance function has excuted and choose what spectrum project on the output screen
+
+    # * the spectrul properties
+        #486.34, 44.052   604.93, 16.459
+        #499.65, 50.844   629.87, 15.591
+        #547.25, 75.127   423.177, 11.825   710.85, 8.3434
+        #749.09, 178.10
+    # * the spectrul properties
+
+    # ? Place and label a circle with the colour of a black body at temperature T
     x, y = i % 6, -(i // 6)
     circle = Circle(xy=(x, y*1.2), radius=0.4, fc=html_rgb)
     ax.add_patch(circle)
     ax.annotate('{:4d} K'.format(T), xy=(x, y*1.2-0.5), va='center',
                 ha='center', color=html_rgb)
-
-    #486.34, 44.052   604.93, 16.459
-    #499.65, 50.844   629.87, 15.591
-    #547.25, 75.127   423.177, 11.825   710.85, 8.3434
-    #749.09, 178.10
 
 # Set the limits and background colour; remove the ticks
 ax.set_xlim(-0.5,5.5)
