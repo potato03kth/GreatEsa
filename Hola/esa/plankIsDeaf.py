@@ -2,7 +2,6 @@ import numpy as np
 from scipy.constants import h, c, k
 import matplotlib.pyplot as plt
 from matplotlib.patches import Circle
-
 from blindColour import cs_hdtv
 cs = cs_hdtv
 
